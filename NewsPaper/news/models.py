@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import Sum
 
 
 class Author(models.Model):
@@ -7,11 +8,20 @@ class Author(models.Model):
     ratingAuthor = models.SmallIntegerField(default = 0)
 
     def update_rating(self):
-        postRating = self.
+        postRat = self.post_set.aggregate(postRating = Sum('rating'))
+        pRat = 0
+        pRat += postRat.get('postRating')
+
+        commentRat = self.authorUser.comment_set.aggregate(commentRating = Sum('rating'))
+        cRat = 0
+        cRat += commentRat.get('commentRatting')
+
+        self.ratingAuthor = pRat * 3 + cRat
+        self.save()
 
 
 class Category(models.Model):
-    name = models.CharField(unique = True)
+    name = models.CharField(max_length = 128, unique = True)
 
 
 class Post(models.Model):
@@ -26,7 +36,7 @@ class Post(models.Model):
     categoryType = models.CharField(max_length = 2, choices = CATEGORY_CHOICES)
     dateCreation = models.DateTimeField(auto_now_add = True)
     postCategory = models.ManyToManyField(Category, through = 'PostCategory')
-    title = models.CharField(null = False)
+    title = models.CharField(max_length = 128, null = False)
     text = models.TextField()
     rating = models.SmallIntegerField(default = 0)
 

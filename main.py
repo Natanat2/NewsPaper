@@ -1,43 +1,76 @@
-from django.db import models
-from datetime import datetime
+# Список команд для Django Shell
 
+python manage.py shell
+from news.models import *
 
-class Staff(models.Model):
-    full_name = models.CharField(max_length=255)
-    position = models.CharField(max_length=255)
-    labor_contract = models.IntegerField()
+# 1.Создать двух пользователей (с помощью метода User.objects.create_user('username')).
+u1 = User.objects.create_user(username='Ivan')
+u2 = User.objects.create_user(username='Sergey')
 
-    def get_last_name(self):
-        return self.full_name.split()[0]
+# 2.Создать два объекта модели Author, связанные с пользователями.
+Author.objects.create(authorUser=u1)
+Author.objects.create(authorUser=u2)
 
+# 3.Добавить 4 категории в модель Category.
+Category.objects.create(name='Sport')
+Category.objects.create(name='IT')
+Category.objects.create(name='Money')
+Category.objects.create(name='Health')
 
-class Product(models.Model):
-    name = models.CharField(max_length=255)
-    price = models.FloatField(default=0.0)
-    composition = models.TextField(default="Состав не указан")
+# 4.Добавить 2 статьи и 1 новость.
+aut = Author.objects.get(id=1)
+Post.objects.create(author = aut, categoryType='AR', title='Статья 1', text='many words')
+Post.objects.create(author = aut, categoryType='AR', title='Статья 2', text='too many words')
+Post.objects.create(author = aut, categoryType='NW', title='Новость 1', text='words')
 
+# 5.Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+Post.objects.get(id=1).Postcategory.add(Category.objects.get(id=1))
+Post.objects.get(id=1).Postcategory.add(Category.objects.get(id=2))
 
-class Order(models.Model):
-    time_in = models.DateTimeField(auto_now_add=True)
-    time_out = models.DateTimeField(null=True)
-    cost = models.FloatField(default=0.0)
-    pickup = models.BooleanField(default=False)
-    complete = models.BooleanField(default=False)
-    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
+# 6.Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть
+# как минимум один комментарий).
+Comment.objects.create(commentPost=Post.objects.get(id=1), commentUser=Author.objects.get(id=1).authorUser, text='good')
+Comment.objects.create(commentPost=Post.objects.get(id=1), commentUser=Author.objects.get(id=2).authorUser, text='yes')
+Comment.objects.create(commentPost=Post.objects.get(id=2), commentUser=Author.objects.get(id=1).authorUser, text='good')
+Comment.objects.create(commentPost=Post.objects.get(id=2), commentUser=Author.objects.get(id=2).authorUser, text='u2')
 
-    products = models.ManyToManyField(Product, through='ProductOrder')
+# 7.Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+Post.objects.get(id=1).like()
+Post.objects.get(id=2).like()
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).dislike()
+Comment.objects.get(id=1).dislike()
 
-    def finish_order(self):
-        self.time_out = datetime.now()
-        self.complete = True
-        self.save()
+Post.objects.get(id=1).rating
+Post.objects.get(id=2).rating
+Comment.objects.get(id=1).rating
 
+# 8.Обновить рейтинги пользователей.
+a = Author.objects.get(id=1)
+b = Author.objects.get(id=2)
+a.update_rating()
+b.update_rating()
 
-class ProductOrder(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    amount = models.IntegerField(default=1)
+# 9.Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+a = Author.objects.order_by('-ratingAuthor')[:-1]
+for i in a:
+    i.authorUser.username
+    i.ratingAuthor
 
-    def product_sum(self):
-        product_price = self.product.price
-        return product_price * self.amount
+# 10.Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на
+# лайках/дислайках к этой статье.
+a = Post.objects.order_by('-rating')[:-1]
+for i in a:
+    i.dateCreation
+    i.author.username
+    i.rating
+    i.title
+    i.preview()
+
+# 11.Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+a = Comment.objects.all
+for i in a:
+    i.dateCreation
+    i.commentUser
+    i.rating
+    i.text

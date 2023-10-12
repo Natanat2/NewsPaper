@@ -1,5 +1,28 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
+
 {% block title %}
-NewsList
+Products
 {% endblock title %}
+
+{% block content %}
+   <h1>Все новости</h1>
+
+   <hr>
+   {% if newslist %}
+       <table>
+           {% for news in newslist %}
+           <tr>
+               <td>{{ news.title|censor }}</td>
+               <td>{{ news.dateCreation|date:'d F Y' }}</td>
+               <td>{{ news.text|truncatechars:20|censor }}</td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+{% endblock content %}

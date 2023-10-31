@@ -13,6 +13,12 @@ News
    <h1>Все новости</h1>
 
    <hr>
+
+   {% if perms.news.add_post %}
+    <a href="{% url 'news_create' %}">Добавить новость</a>
+    {% endif %}
+
+
    {% if newslist %}
        <table>
            {% for news in newslist %}
@@ -20,6 +26,14 @@ News
                <td>{{ news.title|censor }}</td>
                <td>{{ news.dateCreation|date:'d F Y' }}</td>
                <td>{{ news.text|truncatechars:20|censor }}</td>
+               <td>
+                    {% if perms.news.change_post %}
+                    <a href="{% url 'news_update' pk=news.id %}">Изменить</a>
+                    {% endif %}
+
+                </td>
+
+
            </tr>
            {% endfor %}
 

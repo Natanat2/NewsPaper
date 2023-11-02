@@ -153,3 +153,23 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "natanat2@yandex.ru"
+EMAIL_HOST_PASSWORD = "objrfsvshmbouusl"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = "natanat2@yandex.ru"
+
+SERVER_EMAIL = "natanat2@yandex.ru"
+
+MANAGERS = (
+    ('Ivan', 'natanat2@mail.ru'),
+)
+
+ADMINS = (
+    ('anton', 'natanat2@mail.ru'),
+)

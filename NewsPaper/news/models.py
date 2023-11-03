@@ -92,7 +92,7 @@ class Subscription(models.Model):
         related_name='subscriptions',
     )
     category = models.ForeignKey(
-        to='PostCategory',
+        to='Category',
         on_delete=models.CASCADE,
         related_name='subscriptions',
     )

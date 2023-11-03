@@ -14,5 +14,4 @@ urlpatterns = [
    path('articles/<int:pk>/edit/', ArticlesEdit.as_view(), name='articles_update'),
    path('articles/<int:pk>/delete/', ArticlesDelete.as_view(), name='articles_delete'),
    path('subscriptions/', subscriptions, name='subscriptions'),
-
 ]

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="ЗАДАНИЕ 6.7.1 100%">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
+    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="Задание 7.5 50%">
+      <change afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/celery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,20 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/natan/PycharmProjects/NewsPaper/NewsPaper/templates&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/natan/PycharmProjects/NewsPaper/NewsPaper/NewsPaper",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\natan\PycharmProjects\NewsPaper\NewsPaper\NewsPaper" />
       <recent name="C:\Users\natan\PycharmProjects\NewsPaper\NewsPaper\templates" />
       <recent name="C:\Users\natan\PycharmProjects\NewsPaper\NewsPaper\templates\flatpages" />
       <recent name="C:\Users\natan\PycharmProjects\NewsPaper\NewsPaper" />
@@ -250,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699009804824</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Задание 7.5 50%">
+      <option name="closed" value="true" />
+      <created>1699379061495</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699379061495</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +291,7 @@
     <MESSAGE value="ЗАДАНИЕ 6.7.1 70% первое задание готово" />
     <MESSAGE value="ЗАДАНИЕ 6.7.1 80%" />
     <MESSAGE value="ЗАДАНИЕ 6.7.1 100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="ЗАДАНИЕ 6.7.1 100%" />
+    <MESSAGE value="Задание 7.5 50%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание 7.5 50%" />
   </component>
 </project>

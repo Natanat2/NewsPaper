@@ -60,7 +60,7 @@ class Command(BaseCommand):
 
         scheduler.add_job(
             send_weekly_article_list,
-            trigger=CronTrigger(day_of_week="fri", hour="18"),
+            trigger=CronTrigger(day_of_week="mon", hour="8"),
             id="send_weekly_article_list",
             max_instances=1,
             replace_existing=True,

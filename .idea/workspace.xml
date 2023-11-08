@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="Задание 7.5 80%">
+    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="Задание 7.5 85%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/NewsPaper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.bak" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.dat" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.dir" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/celerybeat-schedule.dir" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/tasks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699419202246</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Задание 7.5 85%">
+      <option name="closed" value="true" />
+      <created>1699452994700</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699452994700</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -303,6 +311,7 @@
     <MESSAGE value="ЗАДАНИЕ 6.7.1 100%" />
     <MESSAGE value="Задание 7.5 50%" />
     <MESSAGE value="Задание 7.5 600%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задание 7.5 600%" />
+    <MESSAGE value="Задание 7.5 85%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задание 7.5 85%" />
   </component>
 </project>

@@ -3,6 +3,7 @@ from django.urls import path
 from .views import (NewsList, News, Search, NewsCreate, NewsEdit, NewsDelete, ArticlesCreate,
                     ArticlesEdit, ArticlesDelete, subscriptions)
 
+
 urlpatterns = [
    path('news/', NewsList.as_view(), name='news_list'),
    path('news/<int:pk>', News.as_view(), name='news_detail'),

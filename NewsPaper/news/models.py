@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Sum
 from django.urls import reverse
+from django.core.cache import cache
 
 
 class Author(models.Model):
@@ -64,6 +65,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('news_detail', args = [str(self.id)])
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(f'post-{self.pk}')
+
 
 class PostCategory(models.Model):
     postTrough = models.ForeignKey(Post, on_delete = models.CASCADE)
@@ -85,14 +90,15 @@ class Comment(models.Model):
         self.rating -= 1
         self.save()
 
+
 class Subscriber(models.Model):
     user = models.ForeignKey(
-        to=User,
-        on_delete=models.CASCADE,
-        related_name='subscriptions',
+        to = User,
+        on_delete = models.CASCADE,
+        related_name = 'subscriptions',
     )
     category = models.ForeignKey(
-        to='Category',
-        on_delete=models.CASCADE,
-        related_name='subscriptions',
+        to = 'Category',
+        on_delete = models.CASCADE,
+        related_name = 'subscriptions',
     )

@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from .models import Post
 from .filters import PostFilter
 from .forms import PostForm
-
+from django.core.cache import cache
 from django.contrib.auth.decorators import login_required
 from django.db.models import Exists, OuterRef
 from django.shortcuts import render
@@ -17,22 +17,22 @@ from .models import Subscriber, Category
 def subscriptions(request):
     if request.method == 'POST':
         category_id = request.POST.get('PostCategory')
-        category = Category.objects.get(id=category_id)
+        category = Category.objects.get(id = category_id)
         action = request.POST.get('action')
 
         if action == 'subscribe':
-            Subscriber.objects.create(user=request.user, category=category)
+            Subscriber.objects.create(user = request.user, category = category)
         elif action == 'unsubscribe':
             Subscriber.objects.filter(
-                user=request.user,
-                category=category,
+                user = request.user,
+                category = category,
             ).delete()
 
     categories_with_subscriptions = Category.objects.annotate(
-        user_subscribed=Exists(
+        user_subscribed = Exists(
             Subscriber.objects.filter(
-                user=request.user,
-                category=OuterRef('pk'),
+                user = request.user,
+                category = OuterRef('pk'),
             )
         )
     ).order_by('name')
@@ -65,6 +65,14 @@ class News(DetailView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'news'
+    queryset = Post.objects.all()
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        if not obj:
+            obj = super().get_object(queryset = self.queryset)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        return obj
 
 
 class Search(ListView):

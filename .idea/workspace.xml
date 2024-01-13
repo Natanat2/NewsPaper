@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="D11. Add command deleteallnews.py">
+    <list default="true" id="37b1bae1-88a3-41d4-819d-7076c282c5ef" name="Changes" comment="D13.4 add logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPaper/news/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPaper/news/admin.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +89,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -317,7 +322,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701798545763</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="D11. add field and filters">
+      <option name="closed" value="true" />
+      <created>1702053530589</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1702053530589</updated>
+    </task>
+    <task id="LOCAL-00029" summary="D13.4 add logging">
+      <option name="closed" value="true" />
+      <created>1703558033441</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703558033441</updated>
+    </task>
+    <task id="LOCAL-00030" summary="D13.4 add logging">
+      <option name="closed" value="true" />
+      <created>1703559155204</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1703559155204</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,6 +384,8 @@
     <MESSAGE value="Задание 7.5 100%" />
     <MESSAGE value="D8. Кэширование" />
     <MESSAGE value="D11. Add command deleteallnews.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="D11. Add command deleteallnews.py" />
+    <MESSAGE value="D11. add field and filters" />
+    <MESSAGE value="D13.4 add logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="D13.4 add logging" />
   </component>
 </project>
